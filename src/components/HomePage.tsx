@@ -354,21 +354,21 @@ export default function HomePage() {
          </div>
         </div>
       </div>
-    <div className="mx-auto max-w-7xl px-6 py-10 ml-8">
+    <div className="mx-auto max-w-7xl px-6 py-10 ml-8 ">
         {/* heading */}
-        <p className="text-center  text-sm text-gray-500  ">We collaborate with over 250 Platforms</p>
+        <p className="text-center  text-sm text-gray-500 sm:text-lg  ">We collaborate with over 250 Platforms</p>
         <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-8">
           <div className="relative mt-10 overflow-hidden">
             <div ref={trackRef} className=" flex w-max gap-12  will-change-transform">
               {[...partners, ...partners].map((p, i) => (
               <div key={i} className="flex items-center gap-3 text-gray-400">
-                <div className="relative h-26 w-32 shrink-0 opacity-80">
+                <div className="relative h-26 w-32 shrink-0 opacity-80 ">
                   <Image
                     src={p.icon}
                       alt="image"
                       width={190}
                       height={150}
-                      className="object-contain grayscale"
+                      className="object-contain grayscale "
                       />
                     </div>
                   <div className="leading-tight whitespace-nowrap">
@@ -455,11 +455,12 @@ export default function HomePage() {
       </div>
       </div>
     </div>
-    <div className="mx-auto max-w-7xl p-4 ml-10 bg-gray-50 rounded-lg">
+
+    <div className="mx-auto max-w-7xl p-4 ml-10 bg-gray-50 rounded-lg sm:text-lg">
        <div className="grid lg:grid-cols-2 p-3 items-start justify-between gap-10 bg-gray-50 rounded-lg">
         <h2 className="text-4xl font-semibold tracking-tight text-zinc-800 ml-3"> Everything you need for<br/> 
         your platform </h2>
-        <p className="text-lg text-gray-700 ml-8"> We replaced the messy tech stack with a clean, all-in-one 
+        <p className="text-lg text-gray-700 ml-8 sm:text-lg"> We replaced the messy tech stack with a clean, all-in-one 
           <br/> engine. Create, market,
            and sell your courses without the 3 <br/> a.m. tech panic.</p>
       </div>
@@ -491,8 +492,6 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-
-
      </div>
 
       <div className="max-w-7xl grid lg:grid-cols-2 gap-4 items-center py-8 ml-5">

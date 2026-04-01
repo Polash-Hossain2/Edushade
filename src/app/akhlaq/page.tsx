@@ -59,7 +59,7 @@ export default function FooterPage() {
           <FooterCol title="Legal" links={["Terms of Service", "Privacy Policy", "Cookie Policy"]} />
         </div>
 
-        <div className="my-13 h-px bg-white/10"/>
+        <div className="my-13 h-px bg-white/10" />
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400 ">
           <div className="flex items-center gap-5 ml-8 leading-tight ">

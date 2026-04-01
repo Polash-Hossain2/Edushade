@@ -1,37 +1,67 @@
-export default function TestimonialsGrid() {
-  const images = [
-    "/Card Container a.png",
-   "/Card Container b.png",
-   "/Card Container c.png",
-   "/Card Container d.png",
-    "/Card Container a.png",
-    "/Card Container c.png",
-    "/Card Container d.png",
-  ]
+<div className="mx-auto max-w-7xl p-4 lg:ml-10 bg-gray-50 rounded-lg">
 
-  return (
-    <section className="max-w-6xl mx-auto p-4">
-      {/* 3 columns: (2) (3) (2) */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Col 1 -> 2 images */}
-        <div className="grid gap-6">
-          <img className="w-full rounded-2xl object-cover" src={images[0]} alt="" />
-          <img className="w-full rounded-2xl object-cover" src={images[1]} alt="" />
-        </div>
+  {/* Top Section */}
+  <div className="grid grid-cols-1 md:grid-cols-2 p-3 items-start gap-6 lg:gap-10 bg-gray-50 rounded-lg">
+    
+    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-zinc-800">
+      Everything you need for <br />
+      your platform
+    </h2>
 
-        {/* Col 2 -> 3 images */}
-        <div className="grid gap-6">
-          <img className="w-full rounded-2xl object-cover" src={images[2]} alt="" />
-          <img className="w-full rounded-2xl object-cover" src={images[3]} alt="" />
-          <img className="w-full rounded-2xl object-cover" src={images[4]} alt="" />
-        </div>
+    <p className="text-base sm:text-lg text-gray-700">
+      We replaced the messy tech stack with a clean, all-in-one
+      engine. Create, market, and sell your courses without the
+      3 a.m. tech panic.
+    </p>
 
-        {/* Col 3 -> 2 images */}
-        <div className="grid gap-6">
-          <img className="w-full rounded-2xl object-cover" src={images[5]} alt="" />
-          <img className="w-full rounded-2xl object-cover" src={images[6]} alt="" />
+  </div>
+
+  {/* Slider */}
+  <div className="mx-auto overflow-hidden w-full py-10">
+    
+    <div
+      className={`flex ${
+        transition ? "transition-transform duration-700 ease-in-out" : ""
+      }`}
+      style={{ transform: `translateX(-${index * 100}%)` }}
+    >
+
+      {cards1.map((card, i) => (
+        <div
+          key={i}
+          className="
+            w-full
+            sm:w-1/2
+            lg:w-1/4
+            flex-shrink-0
+            px-2
+          "
+        >
+          <div className="bg-white rounded-2xl shadow-lg p-4 text-center">
+
+            <h2 className="text-lg font-semibold flex items-center justify-between">
+              {card.title}
+              <span className="bg-gray-100 px-2 py-2 rounded-sm text-sm cursor-pointer">
+                <FaPlus />
+              </span>
+            </h2>
+
+            <p className="text-sm text-gray-500 text-start mt-3">
+              {card.desc}
+            </p>
+
+            <Image
+              src={card.img}
+              alt={card.title}
+              height={200}
+              width={300}
+              className="w-full object-cover rounded-xl mt-4"
+            />
+
+          </div>
         </div>
-      </div>
-    </section>
-  )
-}
+      ))}
+    </div>
+
+  </div>
+</div>
