@@ -72,6 +72,7 @@ function HeaderPage() {
               alt="logo"
               width={40}
               height={40}
+              className="mt-1.5"
             />
             <span className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-700">
               Edushade
