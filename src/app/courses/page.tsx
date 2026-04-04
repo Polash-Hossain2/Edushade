@@ -132,7 +132,7 @@ function page() {
         </div> 
       </div>
       <div className='mx-auto max-w-7xl px-6 py-6'>
-        <div className='grid grid-cols-2 gap-6'>
+        <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6'>
           <div className='rounded-lg'>
             <Image
               src="/Right Section32.png"
@@ -182,7 +182,7 @@ function page() {
 
       </div>
       <div className='mx-auto max-w-7xl px-6 py-6'>
-        <div className='grid grid-cols-2 gap-4'>
+        <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4'>
          <div className='mt-8'>
           <h2 className='text-3xl leading-snug font-semibold  text-gray-900 sm:text-4xl'>
             Multiple Assessment <br/> Types for Better Learning
@@ -233,7 +233,7 @@ function page() {
         </div>
       </div>
       <div className='mx-auto max-w-7xl px-6 py-6'>
-        <div className='grid grid-cols-2 gap-8'>
+        <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8'>
           <div className='rounded-lg'>
              <Image
               src="/Right Section444.png"
@@ -292,7 +292,7 @@ function page() {
              no complex <br/> configuration. A quick, three-step process to get your course live.
           </p>
         </div>
-        <div className='grid grid-cols-3 gap-2'>
+        <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2'>
           <div className='mt-8'>
             <div className=''>
               <h3 className='text-center '>
@@ -410,7 +410,7 @@ function page() {
         </div>
       </div>
       <div className='mx-auto max-w-7xl px-6 py-6'>
-        <div className='grid grid-cols-2 gap-4'>
+        <div className='grid sm:grid-cols-1 md:grid-cols-2  lg:grid-cols-2 gap-4'>
           <div className='mt-2 ml-3'>
             <h2 className='text-3xl leading-snug font-semibold text-gray-900 sm:text-4xl'>
               Frequently <br/> Asked Questions

@@ -343,14 +343,24 @@ export default function HomePage() {
             </div>
           </div>
          <div className="rounded-lg">
-            <div className="rounded-lg border min-h-screen flex items-center justify-center
-             bg-gradient-to-br from-[#6fa8dc] via-[white] to-[white] p-8">
-
-            <div className="">
-              <img src="/Libraries Container.png" className="rounded-xl" />
+           <div className="
+                  rounded-lg border 
+                  min-h-[60vh] sm:min-h-[70vh] lg:min-h-screen
+                  flex items-center justify-center
+                  bg-gradient-to-br from-[#6fa8dc] via-white to-white
+                  p-4 sm:p-6 md:p-8 lg:p-12
+                "
+              >
+            <div className=" max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl">
+              <Image
+                src="/Libraries Container.png"
+                alt="Libraries"
+                height={222}
+                width={500}
+                className="rounded-xl  object-contain"
+              />
             </div>
-        </div>
-
+         </div>
          </div>
         </div>
       </div>
@@ -389,7 +399,7 @@ export default function HomePage() {
           <p className="text-lg text-gray-700 mt-5">From solo creators to academies and universities, Edushade supports diverse teaching
              models with flexibility, clarity, and control.</p>
         </div>
-         <Tabs defaultValue="creators" className="rounded-lg lg:w-auto mt-26  ">
+         <Tabs defaultValue="creators" className="rounded-lg lg:w-auto sm:mt-5 md:mt-10 lg:mt-26 ">
            <TabsList className="h-12 w-full justify-between rounded-lg inset-ring-sidebar-border lg:w-[26.2rem] ">
               <TabsTrigger 
               value="creators"
@@ -420,7 +430,7 @@ export default function HomePage() {
            </TabsList>
          </Tabs>
       </div>
-      <div className=" grid lg:grid-cols-2 items-center gap-8 mt-4 rounded-lg ml-8">
+      <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center sm:ml-2 md:ml-3 lg:ml-8 gap-8 mt-4 rounded-lg ">
          <div className="">
            <Image 
             src="/Right Section321.png"
@@ -430,7 +440,7 @@ export default function HomePage() {
             className="rounded-lg"
            />
          </div>
-      <div className="relative h-110 w-150 rounded-lg overflow-hidden">
+      <div className="relative sm:h-full md:h-110 lg:h-110 sm:w-full md:w-150 lg:w-150 rounded-lg overflow-hidden">
          <video
          ref={videoRef}
         className="h-full w-full object-cover"
@@ -470,7 +480,7 @@ export default function HomePage() {
               style={{ transform: `translateX(-${index * 25}%)` }}
             >
               {cards1.map((card: Card, i: number) => (
-                <div key={i} className="w-1/4 flex-shrink-0 px-2">
+                <div key={i} className=" sm:w-1/2 lg:w-1/3 xl:w-1/4 flex-shrink-0 px-2">
                   <div className="bg-white  rounded-2xl shadow-lg p-3.5 text-center">
                    
                       <h2 className="text-lg font-semibold flex items-center justify-between ">
@@ -485,7 +495,7 @@ export default function HomePage() {
                       alt={card.title}
                       height={200}
                       width={300}
-                      className="w-full  object-cover rounded-xl mb-4"
+                      className="object-cover rounded-xl mb-4"
                     />
                   </div>
                 </div>
@@ -552,7 +562,7 @@ export default function HomePage() {
               not predefined software workflows.
            </p>
         </div> 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-1 p-2 ml-7">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 p-2 ml-7">
            <Image
              src="/Container (4).png"
              alt="Right Section5"
@@ -592,8 +602,8 @@ export default function HomePage() {
         </div>
       </div>
       <div className="max-w-7xl mx-auto py-10 space-y-2">
-        <div className="grid grid-cols-2">
-          <div className="p-3 ml-6 mt-30">
+        <div className="grid sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-2 ml-4">
+          <div className="p-3 ml-6 sm:mt-2 md:mt-30 lg:mt-30">
              <h2 className="text-4xl font-semibold">
                  Start Your EdTech <br/>
                  Platform in 60 Seconds 
@@ -660,8 +670,11 @@ export default function HomePage() {
         </div>
         <div className="text-center">
           <Button 
-             className="
-             w-[8%]
+            className="
+            sm:w-auto 
+            md:w-1/3 
+            lg:w-1/4
+            w-[8%]
              bg-gray-100 text-sm
             text-gray-700 font-bold
             hover:bg-gray-200
@@ -705,7 +718,7 @@ export default function HomePage() {
           </Button>
            </div>
         </div>
-        <div className="grid grid-cols-2 gap-2 ml-7">
+        <div className="grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2 ml-7">
           <div className="rounded-lg border-2 p-2 mt-5">
               <Image
                 src="/Card Container t.png"
