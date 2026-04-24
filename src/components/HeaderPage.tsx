@@ -80,7 +80,7 @@ function HeaderPage() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-4">
+          <nav className="hidden md:flex sm:flex items-center gap-4">
 
             {nav.map((group) => (
               <NavigationMenu key={group.id}>
@@ -115,11 +115,11 @@ function HeaderPage() {
             ))}
 
             <Link
-              href="/contact"
-              className="text-sm font-medium text-gray-700 hover:text-black"
-            >
-              Contact Sales
-            </Link>
+                href="/contact"
+                className="sm:text-lg md:text-lg lg:text-sm font-medium text-gray-700 underline decoration-amber-600 decoration-2 underline-offset-4"
+              > 
+                Careers
+              </Link>
 
             <Button variant="outline" className="rounded-full">
               Sign In
@@ -151,7 +151,7 @@ function HeaderPage() {
                     <Link href="/pricing">Pricing</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/contact">Contact</Link>
+                    <Link href="/contract">Contact</Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
