@@ -1,99 +1,66 @@
+"use client";
 
+import { useEffect, useState } from "react";
 
-"use client"
+type Contact = {
+  title: string;
+  desc: string;
+  email: string;
+};
 
-import { useState } from "react"
-import { Plus, Minus } from "lucide-react"
+export default function Home() {
+  const [data, setData] = useState<Contact[]>([]);
 
-const faqData = [
-  {
-    id: 1,
-    question: "How is Edushade different from other LMS platforms?",
-    answer:
-      "Edushade provides flexible learning tools, analytics, and seamless integration for modern education systems.",
-  },
-  {
-    id: 2,
-    question: "Does Edushade support live classes and recorded content?",
-    answer:
-      "Yes. You can run live sessions, upload recorded lessons, and combine both into structured learning programs.",
-  },
-  {
-    id: 3,
-    question: "Can I manage multiple instructors or teachers?",
-    answer:
-      "Yes, you can manage multiple instructors with role-based access and permissions.",
-  },
-  {
-    id: 4,
-    question: "How does learner progress tracking work?",
-    answer:
-      "Track student progress with real-time analytics and performance dashboards.",
-  },
-  {
-    id: 5,
-    question: "Is Edushade suitable for schools and universities?",
-    answer:
-      "Yes, it is designed for institutions, training centers, and universities.",
-  },
-  {
-    id: 6,
-    question: "Can I start small and upgrade later?",
-    answer:
-      "Yes, you can start with a basic plan and upgrade anytime.",
-  },
-]
-
-export default function FAQSection() {
-  const [openId, setOpenId] = useState<number | null>(2)
-
-  const toggleFAQ = (id: number) => {
-    setOpenId(openId === id ? null : id)
-  }
+  useEffect(() => {
+    fetch("lib/api/contract")
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  }, []);
 
   return (
-    <div className="max-w-3xl mx-auto space-y-4 p-6">
+    <div className="min-h-screen bg-gradient-to-b from-white to-blue-100 py-16 px-6">
+      
+      {/* Header */}
+      <div className="text-center mb-12">
+        <p className="text-sm bg-gray-200 px-4 py-1 rounded-full mb-4">
+          Contact Us
+        </p>
 
-      {faqData.map((faq) => {
-        const isOpen = openId === faq.id
+        <h1 className="text-4xl font-bold mb-4">
+          Let’s Start the Conversation
+        </h1>
 
-        return (
+        <p className="text-gray-600 max-w-xl mx-auto">
+          Have a question, idea, or need support? Reach out to our team and
+          we’ll get back to you shortly.
+        </p>
+
+        <button className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-700">
+          Start the Conversation
+        </button>
+      </div>
+
+      {/* Cards */}
+      <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {data.map((item, i) => (
           <div
-            key={faq.id}
-            className={`rounded-2xl border transition-all  
-            ${isOpen ? "bg-gray-100 shadow-sm" : "bg-white"}`}
+            key={i}
+            className="bg-white/60 backdrop-blur-lg rounded-xl p-6 shadow-md"
           >
-            {/* Header */}
-            <button
-              onClick={() => toggleFAQ(faq.id)}
-              className="w-full flex items-center justify-between px-6 py-5 text-left"
-            >
-              <h3 className="text-[17px] font-medium text-gray-800">
-                {faq.question}
-              </h3>
+            <h2 className="font-semibold text-lg mb-2">
+              {item.title}
+            </h2>
 
-              <div
-                className={`w-8 h-8 flex items-center justify-center rounded-md transition
-                ${isOpen ? "bg-blue-600 text-white" : "bg-gray-200 text-gray-700"}`}
-              >
-                {isOpen ? <Minus size={16} /> : <Plus size={16} />}
-              </div>
-            </button>
+            <p className="text-gray-600 text-sm mb-4">
+              {item.desc}
+            </p>
 
-            {/* Content */}
-            <div
-              className={`overflow-hidden transition-all duration-300 ${
-                isOpen ? "max-h-40 pb-6 px-6" : "max-h-0"
-              }`}
-            >
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {faq.answer}
-              </p>
-            </div>
+            <p className="text-blue-600 text-sm underline cursor-pointer">
+              {item.email}
+            </p>
           </div>
-        )
-      })}
-
+        ))}
+      </div>
     </div>
-  )
+  );
 }

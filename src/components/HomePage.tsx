@@ -909,14 +909,14 @@ export default function HomePage() {
             </div>
           </div>
         
-        <div className=" mx-auto space-y-4 p-6">
+        <div className=" mx-auto  space-y-4 p-6">
               {faqData.map((faq) => {
                 const isOpen = openId === faq.id
         
                 return (
                   <div
                     key={faq.id}
-                    className={`rounded-2xl border transition-all  
+                    className={`rounded-2xl  border transition-all  
                     ${isOpen ? "bg-gray-100 " : "bg-white"}`}
                   >
                     {/* Header */}
